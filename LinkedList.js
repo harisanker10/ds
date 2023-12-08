@@ -52,6 +52,7 @@ class LinkedList {
             const node = new Node(value);
             let pointer = this.head;
             for (let i = 0; i < index - 1; i++){
+                
                 pointer = pointer.next;
             }
             
@@ -145,8 +146,42 @@ class LinkedList {
 
     }
 
+    getMiddleVal(){
+        let fastPtr = this.head;
+        let slowPtr = this.head;
+        
+        while(fastPtr?.next){
+            fastPtr = fastPtr.next.next;
+            slowPtr = slowPtr.next;
+        }
+
+        return slowPtr.value;
+    
+    
+    }
+
 
 }
+
+const list = new LinkedList();
+
+list.append(1)
+list.append(2)
+list.append(3)
+list.append(4)
+list.append(5)
+list.append(6)
+list.append(7)
+list.append(8)
+list.append(9)
+list.append(10)
+
+console.log(list.getMiddleVal())
+
+
+
+
+
 
 
 module.exports = LinkedList;
