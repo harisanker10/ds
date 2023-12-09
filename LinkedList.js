@@ -184,4 +184,4 @@ console.log(list.getMiddleVal())
 
 
 
-module.exports = LinkedList;
+module.exports = {LinkedList,Node};
